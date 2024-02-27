@@ -9,7 +9,8 @@ class Country extends Model
 {
     use HasFactory;
 
-    public function collaborator(){
-      return $this->hasMany(Collaborator::class);
+    public function collaborator()
+    {
+        return $this->hasMany(Collaborator::class);
     }
 }
