@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StoreCollaboratorRequest;
-use App\Http\Requests\UpdateCollaboratorRequest;
-use App\Models\Collaborator;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTeamRequest;
+use App\Http\Requests\UpdateTeamRequest;
+use App\Models\Team;
 
-class CollaboratorController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class CollaboratorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCollaboratorRequest $request)
+    public function store(StoreTeamRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class CollaboratorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Collaborator $collaborator)
+    public function show(Team $team)
     {
         //
     }
@@ -43,7 +44,7 @@ class CollaboratorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Collaborator $collaborator)
+    public function edit(Team $team)
     {
         //
     }
@@ -51,7 +52,7 @@ class CollaboratorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCollaboratorRequest $request, Collaborator $collaborator)
+    public function update(UpdateTeamRequest $request, Team $team)
     {
         //
     }
@@ -59,7 +60,7 @@ class CollaboratorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Collaborator $collaborator)
+    public function destroy(Team $team)
     {
         //
     }

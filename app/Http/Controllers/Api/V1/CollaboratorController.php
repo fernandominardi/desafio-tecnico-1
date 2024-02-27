@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StoreCountryRequest;
-use App\Http\Requests\UpdateCountryRequest;
-use App\Models\Country;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCollaboratorRequest;
+use App\Http\Requests\UpdateCollaboratorRequest;
+use App\Models\Collaborator;
 
-class CountryController extends Controller
+class CollaboratorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return Collaborator::all();
     }
 
     /**
@@ -27,7 +28,7 @@ class CountryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCountryRequest $request)
+    public function store(StoreCollaboratorRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class CountryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Country $country)
+    public function show(Collaborator $collaborator)
     {
         //
     }
@@ -43,7 +44,7 @@ class CountryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Country $country)
+    public function edit(Collaborator $collaborator)
     {
         //
     }
@@ -51,7 +52,7 @@ class CountryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCountryRequest $request, Country $country)
+    public function update(UpdateCollaboratorRequest $request, Collaborator $collaborator)
     {
         //
     }
@@ -59,7 +60,7 @@ class CountryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Country $country)
+    public function destroy(Collaborator $collaborator)
     {
         //
     }

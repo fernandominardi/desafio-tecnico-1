@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StoreTeamRequest;
-use App\Http\Requests\UpdateTeamRequest;
-use App\Models\Team;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCountryRequest;
+use App\Http\Requests\UpdateCountryRequest;
+use App\Models\Country;
 
-class TeamController extends Controller
+class CountryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTeamRequest $request)
+    public function store(StoreCountryRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Team $team)
+    public function show(Country $country)
     {
         //
     }
@@ -43,7 +44,7 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Team $team)
+    public function edit(Country $country)
     {
         //
     }
@@ -51,7 +52,7 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTeamRequest $request, Team $team)
+    public function update(UpdateCountryRequest $request, Country $country)
     {
         //
     }
@@ -59,7 +60,7 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Team $team)
+    public function destroy(Country $country)
     {
         //
     }
