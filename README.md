@@ -4,7 +4,7 @@ Desafío técnico de creación de una API RESTful simple.
 
 ## Instrucciones
 
-El proyecto está basado en _Laravel Sail_, por lo que la manera más conveniente de correr es haciendo uso de Docker, idealmente con la herramienta _Docker Desktop_.
+El proyecto está basado en _Laravel Sail_, por lo que la manera más conveniente de correr es haciendo uso de Docker (idealmente con la herramienta _Docker Desktop_).
 
 Una vez los paquetes de terceros estén instalados con _Composer_ se puede proceder con las siguientes instrucciones.
 
