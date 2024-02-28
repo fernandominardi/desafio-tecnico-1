@@ -11,7 +11,20 @@ class StoreCollaboratorRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
+    }
+
+    /**
+     * Prepare the data for validation.
+     */
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'first_name' => $this->firstName,
+            'last_name' => $this->lastName,
+            'team_id' => $this->teamId,
+            'country_id' => $this->countryId,
+        ]);
     }
 
     /**
@@ -22,7 +35,12 @@ class StoreCollaboratorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'email' => ['required', 'email', 'unique:collaborators,email'],
+            'bio' => ['string'],
+            'team_id' => ['required', 'integer', 'exists:teams,id'],
+            'country_id' => ['required', 'integer', 'exists:countries,id'],
         ];
     }
 }

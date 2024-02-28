@@ -35,7 +35,7 @@ class CollaboratorController extends Controller
      */
     public function store(StoreCollaboratorRequest $request)
     {
-        //
+        return new CollaboratorResource(Collaborator::create($request->all()));
     }
 
     /**
