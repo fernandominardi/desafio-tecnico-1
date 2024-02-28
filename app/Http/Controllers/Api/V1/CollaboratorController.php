@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCollaboratorRequest;
 use App\Http\Requests\UpdateCollaboratorRequest;
+use App\Http\Resources\V1\CollaboratorCollection;
+use App\Http\Resources\V1\CollaboratorResource;
 use App\Models\Collaborator;
 
 class CollaboratorController extends Controller
@@ -14,7 +16,7 @@ class CollaboratorController extends Controller
      */
     public function index()
     {
-        return Collaborator::all();
+        return new CollaboratorCollection(Collaborator::paginate(15));
     }
 
     /**
@@ -38,7 +40,7 @@ class CollaboratorController extends Controller
      */
     public function show(Collaborator $collaborator)
     {
-        //
+        return new CollaboratorResource($collaborator);
     }
 
     /**
