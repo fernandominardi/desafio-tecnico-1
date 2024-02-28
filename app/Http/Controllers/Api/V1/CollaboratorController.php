@@ -8,15 +8,23 @@ use App\Http\Requests\UpdateCollaboratorRequest;
 use App\Http\Resources\V1\CollaboratorCollection;
 use App\Http\Resources\V1\CollaboratorResource;
 use App\Models\Collaborator;
+use Illuminate\Http\Request;
 
 class CollaboratorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new CollaboratorCollection(Collaborator::paginate(15));
+        $query = Collaborator::query();
+
+        if ($request->query('details')) {
+            $query->with('team');
+            $query->with('country');
+        }
+
+        return new CollaboratorCollection($query->paginate(15));
     }
 
     /**
@@ -38,9 +46,16 @@ class CollaboratorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Collaborator $collaborator)
+    public function show(Collaborator $collaborator, Request $request)
     {
-        return new CollaboratorResource($collaborator);
+        $query = Collaborator::query();
+
+        if ($request->query('details')) {
+            $query->with('team');
+            $query->with('country');
+        }
+
+        return new CollaboratorResource($query->first());
     }
 
     /**

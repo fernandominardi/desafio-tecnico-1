@@ -22,6 +22,8 @@ class CollaboratorResource extends JsonResource
             'bio' => $this->bio,
             'teamId' => $this->team_id,
             'countryId' => $this->country_id,
+            'team' => $this->whenLoaded('team'),
+            'country' => $this->whenLoaded('country'),
         ];
     }
 }
