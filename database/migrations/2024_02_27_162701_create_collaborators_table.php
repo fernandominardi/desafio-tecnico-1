@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->string('bio')->nullable();
+            $table->text('bio')->nullable();
             $table->unsignedBigInteger('team_id');
             $table->unsignedBigInteger('country_id');
             $table->timestamps();
