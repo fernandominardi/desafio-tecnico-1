@@ -19,6 +19,9 @@ class CollaboratorController extends Controller
     {
         $query = Collaborator::query();
 
+        // Si la opción "details" está presente,
+        // se procede a mostrar los detalles de las claves foraneas.
+        // Esto trabaja en conjunto con CollaboratorResource.
         if ($request->query('details')) {
             $query->with('team');
             $query->with('country');
@@ -42,6 +45,9 @@ class CollaboratorController extends Controller
     {
         $query = Collaborator::query();
 
+        // Si la opción "details" está presente,
+        // se procede a mostrar los detalles de las claves foraneas.
+        // Esto trabaja en conjunto con CollaboratorResource.
         if ($request->query('details')) {
             $query->with('team');
             $query->with('country');
