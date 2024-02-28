@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCollaboratorRequest;
-use App\Http\Requests\UpdateCollaboratorRequest;
+use App\Http\Requests\V1\StoreCollaboratorRequest;
+use App\Http\Requests\V1\UpdateCollaboratorRequest;
 use App\Http\Resources\V1\CollaboratorCollection;
 use App\Http\Resources\V1\CollaboratorResource;
 use App\Models\Collaborator;
