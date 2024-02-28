@@ -13,4 +13,9 @@ class Collaborator extends Model
     {
         return $this->belongsTo(Team::class);
     }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }
