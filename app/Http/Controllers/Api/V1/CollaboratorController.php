@@ -69,6 +69,8 @@ class CollaboratorController extends Controller
      */
     public function destroy(Collaborator $collaborator)
     {
-        //
+        $id = $collaborator->id;
+        $collaborator->delete();
+        return response()->json(['message' => "Colaborador con id {$id} eliminado con éxito."], 200);
     }
 }
