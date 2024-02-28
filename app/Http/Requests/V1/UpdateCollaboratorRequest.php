@@ -15,14 +15,21 @@ class UpdateCollaboratorRequest extends FormRequest
     }
 
     /**
+     * Prepare the data for validation.
+     */
+    protected function prepareForValidation(): void
+    {
+        $this->merge(StoreCollaboratorRequest::inputMergeArray($this));
+    }
+
+    /**
      * Get the validation rules that apply to the request.
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        $isPatch = $this->method() == 'PATCH';
+        return StoreCollaboratorRequest::rulesArray($isPatch);
     }
 }

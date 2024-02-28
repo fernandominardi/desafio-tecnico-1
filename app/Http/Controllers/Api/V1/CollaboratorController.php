@@ -53,7 +53,7 @@ class CollaboratorController extends Controller
             $query->with('country');
         }
 
-        return new CollaboratorResource($query->first());
+        return new CollaboratorResource($query->findOrFail($collaborator->id));
     }
 
     /**
@@ -61,7 +61,7 @@ class CollaboratorController extends Controller
      */
     public function update(UpdateCollaboratorRequest $request, Collaborator $collaborator)
     {
-        //
+        $collaborator->update($request->all());
     }
 
     /**
