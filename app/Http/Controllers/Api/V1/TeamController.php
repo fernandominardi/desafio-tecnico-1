@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTeamRequest;
 use App\Http\Requests\UpdateTeamRequest;
+use App\Http\Resources\V1\TeamCollection;
 use App\Http\Resources\V1\TeamResource;
 use App\Models\Team;
 
@@ -15,7 +16,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        return Team::all();
+        return new TeamCollection(Team::all());
     }
 
     /**

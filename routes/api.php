@@ -23,7 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], function () {
     Route::apiResource('collaborators', CollaboratorController::class);
+    Route::get('/countries', [CountryController::class, 'index']);
     Route::get('/countries/{country}', [CountryController::class, 'show']);
+    Route::get('/teams', [TeamController::class, 'index']);
     Route::get('/teams/{team}', [TeamController::class, 'show']);
     // Route::apiResource('countries', CountryController::class);
     // Route::apiResource('teams', TeamController::class);
